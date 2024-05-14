@@ -1,0 +1,88 @@
+/* Homepage.css */
+.homepage-wrapper {
+  background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
+  min-height: 100vh; /* Sayfanın tam boyunu kaplar */
+  position: relative; /* Footer'ın altta sabit kalması için */
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-content {
+  text-align: center;
+  padding: 20px;
+  flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
+  overflow: auto;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: scale(1.05);
+}
+
+.info-box img {
+  max-width: 250px;    /* Ensures the image never exceeds the box width */
+  height: auto;       /* Maintains the aspect ratio */
+  margin-bottom: 10px; /* Adds some space between the image and the text below it */
+}
+
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.footer {
+  width: 100%;
+}
+
+.homepage-slider {
+  width: 100vw; /* Tüm ekran genişliğini kaplar */
+  height: 100vh; /* Tüm ekran yüksekliğini kaplar */
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Her slayt tam ekran yüksekliğinde olacak */
+    color: white;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Metinleri merkezlemek için */
+.slick-slide h1, .slick-slide p {
+  text-align: center;
+  padding: 0 20px;
+}
