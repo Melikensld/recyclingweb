@@ -1,0 +1,54 @@
+.about-container {
+  background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
+    min-height: 100vh; /* Sayfanın tam boyunu kaplar */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer {
+  width: 100%;
+  bottom:0;
+}
+
+.about-section {
+  flex:1;
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background to match homepage */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.team-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.team-member {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+  font-size: 1.8rem;
+  color: #0056b3; /* Blue color for headings */
+}
+
+.team-member p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #666; /* Grey text for details */
+}

@@ -1,57 +1,56 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
+import logo from './image/logo2.png';
 
 function Navbar() {
-  const [active, setActive] = useState("nav__menu");
-  const [icon, setIcon] = useState("nav__toggler");
-  const navToggle = () => {
-    if (active === "nav__menu") {
-      setActive("nav__menu nav__active");
-    } else setActive("nav__menu");
+  const [isActive, setIsActive] = useState(false);
 
-    // Icon Toggler
-    if (icon === "nav__toggler") {
-      setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
+  const navToggle = () => {
+    setIsActive(!isActive); // Toggle the active state
   };
+
   return (
     <nav className="nav">
-      <a href="#" className="nav__brand">
-        Geri Dönüşüm
-      </a>
-      <ul className={active}>
+    <div className="logo">
+        <Link to="/" className="nav__brand">
+                <img src={logo} alt="Logo" style={{ display: 'block' }}/>
+               </Link>
+    </div>
+
+      <ul className={`nav__menu ${isActive ? "nav__active" : ""}`}>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/home" className="nav__link">
             Ana Sayfa
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/about" className="nav__link">
             Kurumsal
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/services" className="nav__link">
             Hizmetlerimiz
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/info" className="nav__link">
             Yararlı Bilgiler
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <Link to="/contact" className="nav__link">
             İletişim
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
-            Giriş/Üye ol
-          </a>
+          <Link to="/login" className="nav__link">
+            Giriş/Üye Ol
+          </Link>
         </li>
       </ul>
-      <div onClick={navToggle} className={icon}>
+      <div onClick={navToggle} className={`nav__toggler ${isActive ? "toggle" : ""}`}>
         <div className="line1"></div>
         <div className="line2"></div>
         <div className="line3"></div>
