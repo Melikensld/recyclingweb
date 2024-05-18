@@ -41,16 +41,16 @@ function Homepage() {
       <div className="homepage-content">
         <Slider {...settings}>
           <div>
-            <h1>Welcome to Our Recycling Info Page!</h1>
-            <p>Learn about the importance of recycling and how it helps our planet.</p>
+            <h1>Make a Difference with Daily Recycling</h1>
+            <p>Coffee cups, newspapers, office papers... Do you know how to recycle these simple items in your daily life? By properly separating your paper waste at home, school, or work, you reduce your environmental impact. Recycled papers are used in the production of new products, helping to conserve natural resources. Remember, every small step can make a big difference!</p>
           </div>
           <div>
-            <h1>Join Our Community</h1>
-            <p>Connect with others dedicated to sustainable living.</p>
+            <h1>Enhance Your Home Recycling Routine</h1>
+            <p>Are you utilizing your recycling bin effectively at home? Start by recycling common household items like junk mail, magazines, and cereal boxes. Place a dedicated recycling bin in your kitchen or office to make recycling as easy as throwing trash away. Educating your family about what can be recycled increases the effectiveness of your efforts and helps cultivate a sustainable lifestyle.</p>
           </div>
           <div>
-            <h1>Start Recycling Today</h1>
-            <p>Find tips and tricks on how to start recycling at home or work.</p>
+            <h1>Understand the Impact of Recycling Paper</h1>
+            <p>Every ton of recycled paper can save 17 trees, 4,000 kilowatts of energy, and over 3 cubic yards of landfill space. When you choose to recycle, not only are you saving trees but also conserving energy and reducing landfill waste. Start by checking if your paper products are recyclable and make sure they are clean and dry before tossing them in the recycling bin</p>
           </div>
         </Slider>
         <div className="info-boxes">
