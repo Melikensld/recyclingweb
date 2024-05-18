@@ -29,7 +29,7 @@ function ContactPage() {
     <div className="contact-container">
       <Navbar />
       <div className="contact-content">
-        <h1 className="contact-heading">İletişim</h1>
+        <h1 className="contact-heading">Contact Us</h1>
         <div className="contact-info">
           <p className="contact-detail">Telefon: (123) 456-7890</p>
           <p className="contact-detail">Email: info@example.com</p>

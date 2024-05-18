@@ -5,6 +5,7 @@ import Homepage from './Components/Home/homepage';
 import Login from './Components/LoginSignup/Login';
 import AboutPage from './Components/About/about';
 import ContactPage from './Components/Contact/contact'
+import InfoPage from "./Components/Info/info";
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path = "/info" element={<InfoPage />} />
+
+
         {/* Diğer Route tanımları */}
+
       </Routes>
     </Router>
   );

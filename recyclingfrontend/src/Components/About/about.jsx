@@ -8,22 +8,29 @@ function AboutPage() {
     <div className="about-container">
       <Navbar />
       <section className="about-section">
-        <h1 className="section-heading">Hakkımızda</h1>
-        <p>Projemiz, sürdürülebilir çevre bilincini arttırmak ve geri dönüşüm süreçlerini daha anlaşılır kılmak amacıyla tasarlandı. 2023 yılında başlayan bu girişim, çeşitli geri dönüşüm materyalleri üzerinde yoğun çalışmalar yaparak toplumda farkındalık yaratmayı hedeflemektedir.</p>
-        <h2>Projemizin Gelişim Süreci</h2>
-        <p>Bu projede, başlangıçtan itibaren çevre dostu teknolojiler ve sürdürülebilir yaşam tarzları üzerine yoğunlaşıldı. Geri dönüşüm süreçlerini daha verimli hale getirmek ve bu bilgileri topluma aktarmak adına çeşitli araştırmalar yapıldı.</p>
-        <h2>Ekibimiz</h2>
+        <h1 className="section-heading">About Us</h1>
+        <p>Our project is designed to enhance sustainable environmental awareness and make recycling processes more comprehensible. Launched in 2023, this initiative aims to create awareness in society through intensive studies on various recycling materials.
+
+          The Environmental Awareness and Effective Recycling Platform Project takes on a leading role in the industry by continuously focusing on improvement. This leadership reinforces our commitment to integrating environmental management and sustainable practices at all stages of our project.
+
+          Our project is dedicated to raising environmental awareness and digitalizing recycling processes through innovative solutions. By leveraging software and hardware innovations, we collaborate with recycling companies, local governments, and municipalities to provide a more sustainable and digital process management.
+
+          This platform offers a scalable, fully integrable, ultra-modern, and modular structure that allows users to manage their companies within a circular economy, achieve sustainability goals, and optimize business processes. With our customer-centric approach, we transparently meet the needs of our users and offer innovations that enhance business value and sustainability by adopting eco-friendly initiatives. Our project impacts millions, providing smart solutions designed for waste management companies, smart cities, and municipalities.
+        </p>
+        <h2>Development Process of Our Project</h2>
+        <p>From the beginning, this project has focused on eco-friendly technologies and sustainable lifestyles. Various studies were conducted to make recycling processes more efficient and to disseminate this knowledge to the community.</p>
+        <h2>Our Team</h2>
         <div className="team-section">
           <div className="team-member">
-            <h3>Aylin Yıldırım</h3>
+            <h3>Gülsün Görgülü</h3>
             <p>Aylin, çevre mühendisliği alanında uzmanlaşmış ve bu projenin lideridir. Sürdürülebilir çevre uygulamaları konusunda derin bir bilgiye sahiptir ve projemizdeki inovatif çözümlerin arkasındaki ana güçtür.</p>
           </div>
           <div className="team-member">
-            <h3>Burak Demir</h3>
+            <h3>Kürşat Varlı</h3>
             <p>Burak, yazılım mühendisi olarak projemizde teknolojik altyapıyı sağlamaktadır. Geri dönüşüm süreçlerinin dijitalleştirilmesi ve kullanıcı deneyimini optimize etme konusunda kritik bir role sahiptir.</p>
           </div>
           <div className="team-member">
-            <h3>Elif Çetin</h3>
+            <h3>Melike Ünsaldı</h3>
             <p>Elif, projemizin araştırma ve geliştirme bölümünde çalışmakta olup, yeni geri dönüşüm metodolojileri üzerine çalışmalar yapmaktadır. Ayrıca, toplum içinde çevre bilincini artırmak için eğitim programları düzenlemektedir.</p>
           </div>
         </div>

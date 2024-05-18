@@ -21,32 +21,27 @@ function Navbar() {
       <ul className={`nav__menu ${isActive ? "nav__active" : ""}`}>
         <li className="nav__item">
           <Link to="/home" className="nav__link">
-            Ana Sayfa
+            Home Page
           </Link>
         </li>
         <li className="nav__item">
           <Link to="/about" className="nav__link">
-            Kurumsal
-          </Link>
-        </li>
-        <li className="nav__item">
-          <Link to="/services" className="nav__link">
-            Hizmetlerimiz
+            About Us
           </Link>
         </li>
         <li className="nav__item">
           <Link to="/info" className="nav__link">
-            Yararlı Bilgiler
+            Useful Information
           </Link>
         </li>
         <li className="nav__item">
           <Link to="/contact" className="nav__link">
-            İletişim
+            Contact Us
           </Link>
         </li>
         <li className="nav__item">
           <Link to="/login" className="nav__link">
-            Giriş/Üye Ol
+            Sign In/Sign Up
           </Link>
         </li>
       </ul>
