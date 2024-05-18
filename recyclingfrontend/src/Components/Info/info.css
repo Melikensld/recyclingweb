@@ -17,16 +17,19 @@
     background-color: #f9f9f9; /* Açık arka plan */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
 }
 
 .section-heading {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     color: #2E7D32; /* Daha koyu yeşil renk */
     margin-bottom: 15px;
 }
 
 .section-subheading {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     color: #1B5E20; /* Daha koyu yeşil renk */
     margin-top: 20px;
     margin-bottom: 10px;
@@ -40,21 +43,45 @@ p {
 }
 
 .info-image {
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
     margin: 20px 0;
     border: 2px solid #2E7D32; /* Resimlerin etrafında koyu yeşil kenarlık */
     border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.text-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px; /* Resim ve metin arasındaki boşluk */
+}
+
+.text-container {
+    flex: 1;
+    min-width: 300px;
 }
 
 .image-container {
+    flex: 1;
+    min-width: 300px;
     text-align: center; /* Resimleri ortalar */
+}
+
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    /*background-color: #8A9A5B;  Beyaz arka plan */
+    transition: transform 0.3s ease-in-out;
 }
 
 
 
 iframe {
-    width: 75%;
+    width: 100%;
     height: 480px;
     border: none;
     border-radius: 8px;
@@ -63,4 +90,12 @@ iframe {
 .footer {
     width: 100%;
     bottom: 0;
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

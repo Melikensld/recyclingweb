@@ -19,10 +19,14 @@ function InfoPage() {
                 </div>
 
                 <h1 className="section-subheading">How Does Paper Recycling Occur?</h1>
-                <p>Paper recycling involves the collection, processing, and repurposing of used paper and cardboard into reusable material. This process is crucial for conserving natural resources, reducing environmental pollution, and improving waste management. Paper is commonly found in large quantities in schools, offices, and homes, making its recycling highly effective. The recycling process includes gathering used papers, washing them, and removing contaminants such as ink. The cleaned paper pulp is then used to produce new paper and cardboard.</p>
-                <p>Paper recycling contributes to the preservation of forests as it requires fewer trees to be cut down. Additionally, the production of recycled paper consumes less energy and water compared to the production of new paper. This reduces the carbon footprint and lessens the overall pressure on the environment. Consumers and businesses can contribute to this process by reducing paper usage and properly separating recyclable materials. Awareness and participation from everyone are crucial for maintaining a sustainable environment.</p>
-                <div className="image-container">
-                    <img src={paperrecycling} alt="Paper Recycling" className="info-image" />
+                <div className="text-image-container">
+                    <div className="text-container">
+                        <p>Paper recycling involves the collection, processing, and repurposing of used paper and cardboard into reusable material. This process is crucial for conserving natural resources, reducing environmental pollution, and improving waste management. Paper is commonly found in large quantities in schools, offices, and homes, making its recycling highly effective. The recycling process includes gathering used papers, washing them, and removing contaminants such as ink. The cleaned paper pulp is then used to produce new paper and cardboard.</p>
+                        <p>Paper recycling contributes to the preservation of forests as it requires fewer trees to be cut down. Additionally, the production of recycled paper consumes less energy and water compared to the production of new paper. This reduces the carbon footprint and lessens the overall pressure on the environment. Consumers and businesses can contribute to this process by reducing paper usage and properly separating recyclable materials. Awareness and participation from everyone are crucial for maintaining a sustainable environment.</p>
+                    </div>
+                    <div className="image-container">
+                        <img src={paperrecycling} alt="Paper Recycling" className="info-image" />
+                    </div>
                 </div>
 
                 <h1 className="section-subheading">The Paper Recycling Process</h1>
