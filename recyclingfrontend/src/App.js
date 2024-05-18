@@ -6,6 +6,7 @@ import Login from './Components/LoginSignup/Login';
 import AboutPage from './Components/About/about';
 import ContactPage from './Components/Contact/contact'
 import InfoPage from "./Components/Info/info";
+import Profile from "./Components/Profile/profile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path = "/info" element={<InfoPage />} />
+        <Route path = "/profile" element={<Profile />} />
 
 
         {/* Diğer Route tanımları */}
