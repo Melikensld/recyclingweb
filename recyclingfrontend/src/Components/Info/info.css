@@ -1,51 +1,66 @@
-
-.homepage-content {
-    text-align: center;
-    padding: 20px;
-    flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
-}
-
+/* InfoPage.css */
 .info-container {
-    background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
+    background-color: #D3D3D3; /* Arka plan rengini belirler */
     min-height: 100vh; /* Sayfanın tam boyunu kaplar */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.footer {
-    width: 100%;
-    bottom:0;
-}
 
 .info-section {
-    flex:1;
+    flex: 1;
     width: 80%;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9; /* Light background to match homepage */
+    background-color: #f9f9f9; /* Açık arka plan */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section-heading {
     font-size: 2.4rem;
+    color: #2E7D32; /* Daha koyu yeşil renk */
     margin-bottom: 15px;
 }
+
+.section-subheading {
+    font-size: 1.8rem;
+    color: #1B5E20; /* Daha koyu yeşil renk */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 p {
     line-height: 1.6;
     font-size: 16px;
     margin-bottom: 20px;
+    color: #333; /* Daha koyu yazı rengi */
 }
-/* Ensure images and iframes are responsive */
-iframe {
-    max-width: 100%;
-    height: 300px;
-    display: block;
+
+.info-image {
+    max-width: 50%;
+    height: auto;
     margin: 20px 0;
+    border: 2px solid #2E7D32; /* Resimlerin etrafında koyu yeşil kenarlık */
+    border-radius: 8px;
+}
+
+.image-container {
+    text-align: center; /* Resimleri ortalar */
 }
 
 
 
+iframe {
+    width: 75%;
+    height: 480px;
+    border: none;
+    border-radius: 8px;
+}
 
+.footer {
+    width: 100%;
+    bottom: 0;
+}
