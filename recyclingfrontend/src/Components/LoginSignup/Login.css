@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 3%;
     background: #fff;
     padding-bottom: 30px;
     width: 600px;
@@ -16,11 +16,11 @@
     align-items: center;
     gap: 9px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 5%;
 }
 
 .text{
-    color: #3c009d;
+    color: rgb(4, 39, 106);
     font-size: 48px;
     font-weight: 700;
     margin-top: 50px;
@@ -29,7 +29,7 @@
 .underline{
     width: 61px;
     height: 6px;
-    background: #3c009d;
+    background: rgb(4, 39, 106);
     border-radius: 9px;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .forgot-password span{
-    color: #4c00b4;
+    color: rgb(4, 39, 106);
     cursor: pointer;
 }
 
@@ -90,7 +90,7 @@
     width: 220px;
     height: 59px;
     color: #fff;
-    background: #4c00b4;
+    background: rgb(4, 39, 106);
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;

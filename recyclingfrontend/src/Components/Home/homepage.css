@@ -1,90 +1,208 @@
 /* Homepage.css */
 .homepage-wrapper {
-  background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
-  min-height: 100vh; /* Sayfanın tam boyunu kaplar */
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+    background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
+    min-height: 100vh; /* Sayfanın tam boyunu kaplar */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .homepage-content {
-  text-align: center;
-  padding: 20px;
-  flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
+    text-align: center;
+    padding: 20px;
+    flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
 }
 
 .info-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 100px;
-  margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .info-box {
-  flex: 1 1 200px;
-  margin: 10px;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    flex: 1 1 200px;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.info-box h2 {
+    color: #1B5E20;
+}
+.info-box:hover {
+    transform: scale(1.05);
 }
 
-.info-box:hover {
-  transform: scale(1.05);
+/* Slider genel stil ayarları */
+.slider-item {
+    position: relative;
+    color: white; /* Metin rengini belirleyin, beyaz genellikle görünürlük için iyidir */
 }
+
+.slider-image {
+    width: 100%;
+    height: 360px; /* Sabit bir yükseklik veya ihtiyacınıza uygun olarak ayarlayın */
+    object-fit: cover; /* Resmin boyutlandırılma şeklini ayarlar */
+}
+
 
 .info-box img {
-  max-width: 250px;    /* Ensures the image never exceeds the box width */
-  height: auto;       /* Maintains the aspect ratio */
-  margin-bottom: 10px; /* Adds some space between the image and the text below it */
+    max-width: 250px; /* Ensures the image never exceeds the box width */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 10px; /* Adds some space between the image and the text below it */
 }
 
 
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
-}
-
-.footer {
-  width: 100%;
-}
-
-.homepage-slider {
-  width: 100vw; /* Tüm ekran genişliğini kaplar */
-  height: 100vh; /* Tüm ekran yüksekliğini kaplar */
-  .slick-slide {
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Her slayt tam ekran yüksekliğinde olacak */
-    color: white;
-    background-size: cover;
-    background-position: center;
-  }
+    z-index: 1050;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    color: #1B5E20;
+}
+
+/* Close Button */
+.close-button {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #1B5E20;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* Modal Body */
+.modal-body {
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+/* Styling for Paragraphs in Modal */
+.modal-body p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #666;
+    font-size: 16px;
+}
+
+.modal-body p.bold {
+    font-weight: bold;
+    color: #1B5E20; /* Metin rengini daha belirgin yapmak için */
+}
+
+/* Unordered List in Modal */
+.modal-body ul {
+    padding-left: 20px;
+}
+
+.modal-body ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Make the bullets slightly bold */
+.modal-body ul li {
+    font-weight: 500;
+    list-style-type: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.footer {
+    width: 100%;
+}
+
+.homepage-wrapper .nav {
+    margin-top: -3vh;
+}
+
+.homepage-slider {
+    width: 100vw; /* Tüm ekran genişliğini kaplar */
+    height: 100vh; /* Tüm ekran yüksekliğini kaplar */
+
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Her slayt tam ekran yüksekliğinde olacak */
+        color: white;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 /* Metinleri merkezlemek için */
-.slick-slide h1, .slick-slide p {
-  text-align: center;
-  padding: 0 20px;
+.slick-slide h1 {
+    text-align: center;
+    padding: 0 20px;
+    color: #1B5E20;
+    margin: 1%;
+}
+
+.slick-slide p {
+    text-align: center;
+    padding: 0 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
