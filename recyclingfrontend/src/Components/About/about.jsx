@@ -23,15 +23,16 @@ function AboutPage() {
         <div className="team-section">
           <div className="team-member">
             <h3>Gülsün Görgülü</h3>
-            <p>Aylin, çevre mühendisliği alanında uzmanlaşmış ve bu projenin lideridir. Sürdürülebilir çevre uygulamaları konusunda derin bir bilgiye sahiptir ve projemizdeki inovatif çözümlerin arkasındaki ana güçtür.</p>
+            <p>Gülsün, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında chatbot yapımı ve projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.
+            </p>
           </div>
           <div className="team-member">
             <h3>Kürşat Varlı</h3>
-            <p>Burak, yazılım mühendisi olarak projemizde teknolojik altyapıyı sağlamaktadır. Geri dönüşüm süreçlerinin dijitalleştirilmesi ve kullanıcı deneyimini optimize etme konusunda kritik bir role sahiptir.</p>
+            <p>Kürşat, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında ve machine learning algoritmasının geliştirilmesinde projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.</p>
           </div>
           <div className="team-member">
             <h3>Melike Ünsaldı</h3>
-            <p>Elif, projemizin araştırma ve geliştirme bölümünde çalışmakta olup, yeni geri dönüşüm metodolojileri üzerine çalışmalar yapmaktadır. Ayrıca, toplum içinde çevre bilincini artırmak için eğitim programları düzenlemektedir.</p>
+            <p>Melike,bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında web kısmının kodlanmasında yer almıştır. Frontend, backend ve login kısmının yapımında yer almıştır.</p>
           </div>
         </div>
       </section>
