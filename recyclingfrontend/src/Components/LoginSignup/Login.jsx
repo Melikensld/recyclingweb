@@ -1,4 +1,3 @@
-// src/components/Login.jsx
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Contexts/authContext'; // import the AuthContext
@@ -6,14 +5,39 @@ import './Login.css';
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
+import {FaEye, FaEyeSlash} from "react-icons/fa";
 
 const Login = () => {
     const [action, setAction] = useState('Sign Up');
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [message, setMessage] = useState("");
     const navigate = useNavigate();
     const { login } = useAuth(); // get the login function
+
+    const handleLogin = () => {
+        const loginUser = {
+            email: email,
+            password: password
+        };
+
+        fetch("/api/user/login?email=" + loginUser.email + "&password=" + loginUser.password, {
+            method: "POST"
+        })
+            .then(response => {
+                if (response.ok) {
+                    login(); // update authentication status
+                    navigate('/profile'); // navigate to profile page
+                } else {
+                    alert("Geçersiz kimlik bilgileri"); // Hatalı giriş uyarısı
+                }
+            })
+            .catch(error => {
+                alert("Sunucu hatası: " + error.message); // Sunucu ile ilgili hata uyarısı
+            });
+    };
 
     const handleSignUp = () => {
         const newUser = {
@@ -31,37 +55,18 @@ const Login = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    console.log("User registered successfully");
+                    alert("Kullanıcı başarıyla kaydedildi."); // Kayıt başarılı uyarısı
                 } else {
-                    console.error("Error registering user");
+                    alert("Kullanıcı kaydı sırasında bir hata oluştu."); // Kayıt hatası uyarısı
                 }
             })
             .catch(error => {
-                console.error("Error:", error);
+                alert("Sunucu hatası: " + error.message); // Sunucu ile ilgili hata uyarısı
             });
     };
 
-    const handleLogin = () => {
-        const loginUser = {
-            email: email,
-            password: password
-        };
-
-        fetch("/api/user/login?email=" + loginUser.email + "&password=" + loginUser.password, {
-            method: "POST"
-        })
-            .then(response => {
-                if (response.ok) {
-                    console.log("Login successful");
-                    login(); // update authentication status
-                    navigate('/profile'); // navigate to profile page
-                } else {
-                    console.error("Invalid credentials");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -83,8 +88,12 @@ const Login = () => {
                 </div>
                 <div className="input">
                     <img src={password_icon} alt="" />
-                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <button onClick={togglePasswordVisibility}>
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </button>
                 </div>
+                {message && <div className="message">{message}</div>}
             </div>
             {action === "Sign Up" ?
                 <div className="submit-container">
@@ -94,7 +103,7 @@ const Login = () => {
                 :
                 <div className="submit-container">
                     <div className="submit" onClick={handleLogin}>Login</div>
-                    <div className="switch-action" onClick={() => setAction("Sign Up")}>Don't have an account? Sign Up</div>
+                    <div className="switch-action" onClick={() => setAction("Sign Up")}>Don't have an account? <button className="switch-button">Sign Up</button></div>
                 </div>
             }
         </div>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from './Contexts/authContext'; // import the AuthContext
 import "./navbar.css";
 import logo from './image/logo2.png';
+import {FiLogOut} from "react-icons/fi";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
@@ -49,10 +50,12 @@ function Navbar() {
                     </li>
           <li className="nav__item">
             {isAuthenticated ? (
-                <>
-                  <Link to="/profile" className="nav__link">Profile</Link>
-                  <button onClick={logout} className="nav__link">Logout</button>
-                </>
+                <div className="auth-links">
+                    <Link to="/profile" className="nav__link">Profile</Link>
+                    <button onClick={logout} className="logout-button">
+                        <FiLogOut className="logout-icon" />
+                    </button>
+                </div>
             ) : (
                 <Link to="/login" className="nav__link">Sign In/Sign Up</Link>
             )}

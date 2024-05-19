@@ -60,6 +60,27 @@ transition: all 2s ease-in-out;
   color: rgb(204, 204, 204);
   text-decoration: none;
 }
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.auth-links {
+  display: flex;
+  align-items: center; /* İçerikleri dikey olarak ortalar */
+}
+.logout-icon {
+  color: #dc3545; /* İkon rengi */
+  font-size: 1.5em; /* İkon boyutu */
+  margin-right: 5px; /* Eğer metin de eklerseniz sağ tarafında boşluk oluşturur */
+}
+.logout-button:hover .logout-icon{
+  background-color: #f8f8f8; /* Fare üzerine gelindiğinde arka plan */
+  color: #0056b3;
+}
 
 .nav__link:hover {
   color: white;
