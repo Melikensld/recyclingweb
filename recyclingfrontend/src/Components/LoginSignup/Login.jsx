@@ -1,5 +1,7 @@
+// src/components/Login.jsx
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'; // useHistory yerine useNavigate import edin
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Contexts/authContext'; // import the AuthContext
 import './Login.css';
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
@@ -10,7 +12,8 @@ const Login = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const navigate = useNavigate(); // useHistory yerine useNavigate kullanın
+    const navigate = useNavigate();
+    const { login } = useAuth(); // get the login function
 
     const handleSignUp = () => {
         const newUser = {
@@ -50,7 +53,8 @@ const Login = () => {
             .then(response => {
                 if (response.ok) {
                     console.log("Login successful");
-                    navigate('/profile'); // Başarılı girişten sonra yönlendirme
+                    login(); // update authentication status
+                    navigate('/profile'); // navigate to profile page
                 } else {
                     console.error("Invalid credentials");
                 }
@@ -70,7 +74,7 @@ const Login = () => {
                 {action === "Sign Up" &&
                     <div className="input">
                         <img src={user_icon} alt="" />
-                        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder="Name Surname" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                 }
                 <div className="input">
