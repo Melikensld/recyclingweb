@@ -7,6 +7,7 @@ import AboutPage from './Components/About/about';
 import ContactPage from './Components/Contact/contact'
 import InfoPage from "./Components/Info/info";
 import Profile from "./Components/Profile/profile";
+import Flask from "./Components/Flask/flask";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path = "/info" element={<InfoPage />} />
         <Route path = "/profile" element={<Profile />} />
+        <Route path = "/flask" element={<Flask />} />
 
 
         {/* Diğer Route tanımları */}

@@ -43,6 +43,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav__item">
+                      <Link to="/flask" className="nav__link">
+                        Save Trees
+                      </Link>
+                    </li>
+          <li className="nav__item">
             {isAuthenticated ? (
                 <>
                   <Link to="/profile" className="nav__link">Profile</Link>

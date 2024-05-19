@@ -40,6 +40,12 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .team-member h3 {
@@ -52,3 +58,4 @@
   line-height: 1.6;
   color: #666; /* Grey text for details */
 }
+
