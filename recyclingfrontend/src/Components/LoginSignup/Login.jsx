@@ -17,27 +17,29 @@ const Login = () => {
     const navigate = useNavigate();
     const { login } = useAuth(); // get the login function
 
-    const handleLogin = () => {
-        const loginUser = {
-            email: email,
-            password: password
-        };
+   const handleLogin = () => {
+       const loginUser = {
+           email: email,
+           password: password
+       };
 
-        fetch("/api/user/login?email=" + loginUser.email + "&password=" + loginUser.password, {
-            method: "POST"
-        })
-            .then(response => {
-                if (response.ok) {
-                    login(); // update authentication status
-                    navigate('/profile'); // navigate to profile page
-                } else {
-                    alert("Geçersiz kimlik bilgileri"); // Hatalı giriş uyarısı
-                }
-            })
-            .catch(error => {
-                alert("Sunucu hatası: " + error.message); // Sunucu ile ilgili hata uyarısı
-            });
-    };
+       fetch("/api/user/login?email=" + loginUser.email + "&password=" + loginUser.password, {
+           method: "POST"
+       })
+           .then(response => response.json()) // JSON olarak yanıtı işle
+           .then(data => {
+               if (data.userId) {
+                   login(); // update authentication status
+                   localStorage.setItem("userId", data.userId); // Kullanıcı ID'sini sakla
+                   navigate('/profile'); // navigate to profile page
+               } else {
+                   alert("Geçersiz kimlik bilgileri");
+               }
+           })
+           .catch(error => {
+               alert("Sunucu hatası: " + error.message);
+           });
+   };
 
     const handleSignUp = () => {
         const newUser = {

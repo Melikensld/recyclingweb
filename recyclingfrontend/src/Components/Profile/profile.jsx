@@ -1,39 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../navbar';
 import Footer from '../Footer/footer';
 import './profile.css';
-import {
-    FaUserAlt,
-    FaEnvelope,
-    FaPhone,
-    FaMapMarkerAlt,
-    FaRegLifeRing,
-    FaGlassMartiniAlt,
-    FaRegPaperPlane, FaRegHourglass, FaBookOpen, FaGlassMartini, FaWineGlassAlt
-} from 'react-icons/fa';
-import {GiPlasticDuck, GiSodaCan} from "react-icons/gi";
 
 function Profile() {
-    const [avatar, setAvatar] = useState(null);
-    const userInfo = {
-        name: "Kürşat Varlı",
-        email: "kursat@example.com",
-        phone: "+123456789",
-        address: "1234, Example Street, City, Country",
-        materials: {
-            paper: "150 kg",
-            metal: "50 kg",
-            glass: "30 kg",
-            plastic: "70 kg"
+    const [userInfo, setUserInfo] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+
+    });
+    const [avatar, setAvatar] = useState(null); // Avatar durum değişkeni
+    const userId = localStorage.getItem("userId"); // Kullanıcı ID'sini al
+
+    useEffect(() => {
+        if (userId) {
+            fetch(`/api/user/${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    setUserInfo({
+                        name: data.name,
+                        email: data.email,
+                        phone: data.phone,
+                        address: data.address,
+                        //materials: data.materials
+                    });
+                    if (data.avatar) {
+                        setAvatar(data.avatar); // Avatarı da yanıtta varsa duruma ata
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                });
         }
-    };
+    }, [userId]);
 
     const handleAvatarChange = (e) => {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = (event) => {
-                setAvatar(event.target.result);
+                setAvatar(event.target.result); // Yüklenen dosyadan avatarı güncelle
             };
             reader.readAsDataURL(file);
         }
@@ -45,51 +53,25 @@ function Profile() {
             <div className="profile-content">
                 <div className="user-info">
                     <div className="avatar-info">
-                        <div className="avatar-wrapper">
-                            {avatar ? (
-                                <img src={avatar} alt="Avatar" className="avatar" />
-                            ) : (
-                                <div className="avatar-placeholder">No Avatar</div>
-                            )}
-                            <input
-                                type="file"
-                                id="avatarUpload"
-                                onChange={handleAvatarChange}
-                                style={{ display: 'none' }}
-                            />
-                            <label htmlFor="avatarUpload" className="avatar-label">Change Photo</label>
-                        </div>
-                        <h1> {userInfo.name}</h1>
+                        {avatar ? (
+                            <img src={avatar} alt="Avatar" className="avatar" />
+                        ) : (
+                            <div className="avatar-placeholder">No Avatar</div>
+                        )}
+                        <input
+                            type="file"
+                            id="avatarUpload"
+                            onChange={handleAvatarChange}
+                            style={{ display: 'none' }}
+                        />
+                        <label htmlFor="avatarUpload" className="avatar-label">Change Photo</label>
                     </div>
-                    <p className="icon-text"><FaEnvelope /> {userInfo.email}</p>
-                    <p className="icon-text"><FaPhone /> {userInfo.phone}</p>
-                    <p className="icon-text"><FaMapMarkerAlt /> {userInfo.address}</p>
+                    <h1>{userInfo.name}</h1>
+                    <p className="icon-text">📧 {userInfo.email}</p>
+                    <p className="icon-text">📞 {userInfo.phone}</p>
+                    <p className="icon-text">📍 {userInfo.address}</p>
                 </div>
-                <div className="user-materials">
-                    <h2>Recycled Materials</h2>
-                    <div className="material-items">
-                        <div className="material-item">
-                            <FaBookOpen className="material-icon"/>
-                            <div className="material-name">Paper</div>
-                            <div className="material-value">{userInfo.materials.paper}</div>
-                        </div>
-                        <div className="material-item">
-                            <GiSodaCan className="material-icon"/>
-                            <div className="material-name">Metal</div>
-                            <div className="material-value">{userInfo.materials.metal}</div>
-                        </div>
-                        <div className="material-item">
-                            <FaWineGlassAlt className="material-icon"/>
-                            <div className="material-name">Glass</div>
-                            <div className="material-value">{userInfo.materials.glass}</div>
-                        </div>
-                        <div className="material-item">
-                            <GiPlasticDuck className="material-icon"/>
-                            <div className="material-name">Plastic</div>
-                            <div className="material-value">{userInfo.materials.plastic}</div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <Footer />
         </div>
