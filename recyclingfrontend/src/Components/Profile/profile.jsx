@@ -53,6 +53,7 @@ function Profile() {
             <div className="profile-content">
                 <div className="user-info">
                     <div className="avatar-info">
+                        <div className="avatar-wrapper">
                         {avatar ? (
                             <img src={avatar} alt="Avatar" className="avatar" />
                         ) : (
@@ -65,8 +66,10 @@ function Profile() {
                             style={{ display: 'none' }}
                         />
                         <label htmlFor="avatarUpload" className="avatar-label">Change Photo</label>
+                        </div>
+                        <h1>{userInfo.name}</h1>
                     </div>
-                    <h1>{userInfo.name}</h1>
+
                     <p className="icon-text">📧 {userInfo.email}</p>
                     <p className="icon-text">📞 {userInfo.phone}</p>
                     <p className="icon-text">📍 {userInfo.address}</p>

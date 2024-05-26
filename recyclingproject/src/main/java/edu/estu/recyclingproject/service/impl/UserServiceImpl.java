@@ -26,7 +26,8 @@ public class UserServiceImpl implements UserService {
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
-
+        user.setPhone(userDto.getPhone());
+        user.setAddress(userDto.getAddress());
 
         userRepository.save(user);
 
@@ -44,6 +45,8 @@ public class UserServiceImpl implements UserService {
                     .name(user.getName())
                     .email(user.getEmail())
                     .password(user.getPassword())
+                    .phone(user.getPhone())
+                    .address(user.getAddress())
                     .build();
 
             userDtos.add(userDto);
@@ -64,6 +67,8 @@ public class UserServiceImpl implements UserService {
                 .name(user.getName())
                 .email(user.getEmail())
                 .password(user.getPassword())
+                .phone(user.getPhone())
+                .address(user.getAddress())
                 .build();
     }
 
