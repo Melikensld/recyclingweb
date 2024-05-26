@@ -44,7 +44,7 @@ public class UserController {
         return "User added successfully";
     }
 
-    @GetMapping("getAll")
+    @GetMapping("/getAll")
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
