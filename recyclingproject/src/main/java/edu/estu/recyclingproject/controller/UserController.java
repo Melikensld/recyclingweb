@@ -1,7 +1,9 @@
 package edu.estu.recyclingproject.controller;
 
 import edu.estu.recyclingproject.dto.UserDto;
+import edu.estu.recyclingproject.model.RecyclingMaterial;
 import edu.estu.recyclingproject.model.User;
+import edu.estu.recyclingproject.service.RecyclingMaterialService;
 import edu.estu.recyclingproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,12 +13,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RecyclingMaterialService recyclingMaterialService;
     public UserController(UserService userService){
         this.userService = userService;
     }
@@ -41,7 +47,24 @@ public class UserController {
     }
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+        UserDto user = userService.getUserById(id);
+        if (user == null) {
+            return ResponseEntity.notFound().build(); // Kullanıcı bulunamazsa 404 dön
+        }
+
+        List<RecyclingMaterial> materials = recyclingMaterialService.getMaterialsByUserId(id);
+        Map<String, Double> materialMap = materials.stream()
+                .collect(Collectors.groupingBy(RecyclingMaterial::getMaterialType,
+                        Collectors.summingDouble(RecyclingMaterial::getQuantity)));
+
+        UserDto userProfileDto = new UserDto();
+        userProfileDto.setName(user.getName());
+        userProfileDto.setEmail(user.getEmail());
+        userProfileDto.setPhone(user.getPhone());
+        userProfileDto.setAddress(user.getAddress());
+        userProfileDto.setMaterials(materialMap);
+
+        return ResponseEntity.ok(userProfileDto);
     }
     @PostMapping("/add")
     public String add(@RequestBody UserDto userDto) {

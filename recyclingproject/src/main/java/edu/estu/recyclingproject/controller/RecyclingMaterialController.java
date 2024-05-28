@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/recycling")
 public class RecyclingMaterialController {
@@ -39,6 +41,16 @@ public class RecyclingMaterialController {
         RecyclingMaterial updatedMaterial = service.updateMaterial(material, id);
         if (updatedMaterial != null) {
             return ResponseEntity.ok(updatedMaterial);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<RecyclingMaterial>> getMaterialsByUserId(@PathVariable Long userId) {
+        List<RecyclingMaterial> materials = service.getMaterialsByUserId(userId);
+        if (materials != null && !materials.isEmpty()) {
+            return ResponseEntity.ok(materials);
         } else {
             return ResponseEntity.notFound().build();
         }

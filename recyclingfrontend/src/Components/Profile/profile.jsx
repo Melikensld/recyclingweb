@@ -9,6 +9,7 @@ function Profile() {
         email: "",
         phone: "",
         address: "",
+        materials:{}
 
     });
     const [avatar, setAvatar] = useState(null); // Avatar durum değişkeni
@@ -24,7 +25,7 @@ function Profile() {
                         email: data.email,
                         phone: data.phone,
                         address: data.address,
-                        //materials: data.materials
+                        materials: data.materials
                     });
                     if (data.avatar) {
                         setAvatar(data.avatar); // Avatarı da yanıtta varsa duruma ata
@@ -74,6 +75,22 @@ function Profile() {
                     <p className="icon-text">📞 {userInfo.phone}</p>
                     <p className="icon-text">📍 {userInfo.address}</p>
                 </div>
+                <div className="user-materials">
+                                    <h2>Recycling Materials</h2>
+                                    {Object.keys(userInfo.materials).length > 0 ? (
+                                        <div className="material-items">
+                                            {Object.entries(userInfo.materials).map(([materialType, quantity]) => (
+                                                <div key={materialType} className="material-item">
+                                                    <div className="material-icon">♻️</div>
+                                                    <div className="material-name">Type: {materialType}</div>
+                                                    <div className="material-value">Quantity: {quantity}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <p>No materials found</p>
+                                    )}
+                                </div>
 
             </div>
             <Footer />

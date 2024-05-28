@@ -1,6 +1,7 @@
 package edu.estu.recyclingproject.service.impl;
 
 import edu.estu.recyclingproject.dto.UserDto;
+import edu.estu.recyclingproject.model.RecyclingMaterial;
 import edu.estu.recyclingproject.model.User;
 import edu.estu.recyclingproject.repository.UserRepository;
 import edu.estu.recyclingproject.service.UserService;
@@ -94,5 +95,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User authenticateUser(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password);
+    }
+
+
+    public List<RecyclingMaterial> getUserMaterials(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+        if (user != null) {
+            return user.getRecyclingMaterials();
+        }
+        return null;
     }
 }

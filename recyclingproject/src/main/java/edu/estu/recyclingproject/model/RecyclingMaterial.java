@@ -1,21 +1,17 @@
 package edu.estu.recyclingproject.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "recycling_materials")
 public class RecyclingMaterial {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Double paper;
-    private Double metal;
-    private Double glass;
-    private Double plastic;
 
-    // Getters and Setters
+    @Column(name = "material_type")
+    private String materialType;  // Values: 'paper', 'metal', 'glass', 'plastic'
+
     public Long getId() {
         return id;
     }
@@ -24,35 +20,36 @@ public class RecyclingMaterial {
         this.id = id;
     }
 
-    public Double getPaper() {
-        return paper;
+    public String getMaterialType() {
+        return materialType;
     }
 
-    public void setPaper(Double paper) {
-        this.paper = paper;
+    public void setMaterialType(String materialType) {
+        this.materialType = materialType;
     }
 
-    public Double getMetal() {
-        return metal;
+    public Double getQuantity() {
+        return quantity;
     }
 
-    public void setMetal(Double metal) {
-        this.metal = metal;
+    public void setQuantity(Double quantity) {
+        this.quantity = quantity;
     }
 
-    public Double getGlass() {
-        return glass;
+    public User getUser() {
+        return user;
     }
 
-    public void setGlass(Double glass) {
-        this.glass = glass;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Double getPlastic() {
-        return plastic;
-    }
+    @Column(name = "quantity")
+    private Double quantity;  // Örneğin kilogram cinsinden miktar
 
-    public void setPlastic(Double plastic) {
-        this.plastic = plastic;
-    }
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;  // Bu materyal kimin
+
+    // Constructors, getters and setters
 }
