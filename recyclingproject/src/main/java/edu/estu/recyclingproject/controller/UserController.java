@@ -84,4 +84,17 @@ public class UserController {
     public ResponseEntity<String> delete(@PathVariable long id){
         return ResponseEntity.ok(userService.deleteUser(id));
     }
+
+    @PostMapping("/{id}/materials")
+    public ResponseEntity<Map<String, String>> addOrUpdateMaterial(@PathVariable Long id, @RequestBody Map<String, Double> materials) {
+        materials.forEach((materialType, quantity) -> {
+            RecyclingMaterial material = new RecyclingMaterial();
+            material.setMaterialType(materialType);
+            material.setQuantity(quantity);
+            recyclingMaterialService.saveOrUpdateMaterial(material, id);
+        });
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Materials updated successfully");
+        return ResponseEntity.ok(response);
+    }
 }

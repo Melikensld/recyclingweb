@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface RecyclingMaterialRepository extends JpaRepository<RecyclingMaterial, Long> {
     List<RecyclingMaterial> findAllByUserId(Long userId);
+    RecyclingMaterial findByUserIdAndMaterialType(Long userId, String materialType);
 }

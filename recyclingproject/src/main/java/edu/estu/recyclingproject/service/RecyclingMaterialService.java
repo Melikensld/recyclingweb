@@ -11,4 +11,6 @@ public interface RecyclingMaterialService {
     RecyclingMaterial updateMaterial(RecyclingMaterial material, Long id);
     List<RecyclingMaterial> getMaterialsByUserId(Long userId);
 
+    RecyclingMaterial saveOrUpdateMaterial(RecyclingMaterial material, Long userId);
+    RecyclingMaterial findByUserIdAndMaterialType(Long userId, String materialType);
 }

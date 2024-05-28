@@ -55,4 +55,16 @@ public class RecyclingMaterialServiceImpl implements RecyclingMaterialService {
     public List<RecyclingMaterial> getMaterialsByUserId(Long userId) {
         return repository.findAllByUserId(userId);
     }
+
+    @Override
+    public RecyclingMaterial saveOrUpdateMaterial(RecyclingMaterial material, Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        material.setUser(user);
+        return repository.save(material);
+    }
+
+    @Override
+    public RecyclingMaterial findByUserIdAndMaterialType(Long userId, String materialType) {
+        return repository.findByUserIdAndMaterialType(userId, materialType);
+    }
 }
