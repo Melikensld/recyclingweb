@@ -20,6 +20,7 @@ function Profile() {
         glass: 0,
         plastic: 0
     });
+    const [showMaterialsUpdate, setShowMaterialsUpdate] = useState(false); // State to control visibility
 
     const userId = localStorage.getItem("userId");
 
@@ -73,36 +74,33 @@ function Profile() {
             },
             body: JSON.stringify(newMaterials)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
 
-            // userInfo.materials içinde mevcut olan materyal miktarlarını güncelle
-            const updatedMaterials = { ...userInfo.materials };
-            Object.keys(newMaterials).forEach((key) => {
-                if (updatedMaterials[key]) {
-                    updatedMaterials[key] += newMaterials[key];
-                } else {
-                    updatedMaterials[key] = newMaterials[key];
-                }
-            });
+                const updatedMaterials = { ...userInfo.materials };
+                Object.keys(newMaterials).forEach((key) => {
+                    if (updatedMaterials[key]) {
+                        updatedMaterials[key] += newMaterials[key];
+                    } else {
+                        updatedMaterials[key] = newMaterials[key];
+                    }
+                });
 
-            setUserInfo({
-                ...userInfo,
-                materials: updatedMaterials
+                setUserInfo({
+                    ...userInfo,
+                    materials: updatedMaterials
+                });
+                setNewMaterials({
+                    paper: 0,
+                    metal: 0,
+                    glass: 0,
+                    plastic: 0
+                });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
             });
-
-            // Yeni materyal girişlerini sıfırla
-            setNewMaterials({
-                paper: 0,
-                metal: 0,
-                glass: 0,
-                plastic: 0
-            });
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
     };
 
     return (
@@ -157,29 +155,37 @@ function Profile() {
                             <div className="material-value">{userInfo.materials.plastic || 0}</div>
                         </div>
                     </div>
-                    <div>
-                    <form onSubmit={handleSubmit}>
-                                            <h3 className="input-title">Update Materials</h3>
-                                            <div className="material-input">
-                                                <label>Paper:</label>
-                                                <input type="number" name="paper" value={newMaterials.paper} onChange={handleInputChange} />
-                                            </div>
-                                            <div className="material-input">
-                                                <label>Metal:</label>
-                                                <input type="number" name="metal" value={newMaterials.metal} onChange={handleInputChange} />
-                                            </div>
-                                            <div className="material-input">
-                                                <label>Glass:</label>
-                                                <input type="number" name="glass" value={newMaterials.glass} onChange={handleInputChange} />
-                                            </div>
-                                            <div className="material-input">
-                                                <label>Plastic:</label>
-                                                <input type="number" name="plastic" value={newMaterials.plastic} onChange={handleInputChange} />
-                                            </div>
-                                            <button type="submit" className="submit-button">Update Materials</button>
-                                        </form>
+                    <div className="updateMaterial">
+                        <button
+                            className={`submit-button ${showMaterialsUpdate ? 'with-margin' : ''}`}
+                            onClick={() => setShowMaterialsUpdate(!showMaterialsUpdate)}
+                        >
+                            Update Materials
+                        </button>
+                        {showMaterialsUpdate && (
+                            <div>
+                                <form onSubmit={handleSubmit}>
+                                    <div className="material-input">
+                                        <label>Paper:</label>
+                                        <input type="number" name="paper" value={newMaterials.paper} onChange={handleInputChange} />
+                                    </div>
+                                    <div className="material-input">
+                                        <label>Metal:</label>
+                                        <input type="number" name="metal" value={newMaterials.metal} onChange={handleInputChange} />
+                                    </div>
+                                    <div className="material-input">
+                                        <label>Glass:</label>
+                                        <input type="number" name="glass" value={newMaterials.glass} onChange={handleInputChange} />
+                                    </div>
+                                    <div className="material-input">
+                                        <label>Plastic:</label>
+                                        <input type="number" name="plastic" value={newMaterials.plastic} onChange={handleInputChange} />
+                                    </div>
+                                    <button type="submit" className="submit-button">Submit</button>
+                                </form>
+                            </div>
+                        )}
                     </div>
-
                 </div>
             </div>
             <Footer />

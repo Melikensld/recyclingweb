@@ -179,6 +179,14 @@
     border-radius: 5px;
     font-size: 1em;
 }
+.updateMaterial {
+    display: flex;
+    flex-direction: column;  /* Aligns children (button and form) in a column */
+    align-items: center;     /* Centers children horizontally in the column */
+    width: 100%;             /* Ensures the container takes full width */
+    margin: 20px 0;          /* Adds some margin around the section for spacing */
+}
+
 
 .submit-button {
     padding: 10px 20px;
@@ -188,9 +196,17 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; /* Consider removing this if you want the button exactly centered */
 }
 
 .submit-button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
+
+.submit-button.with-margin {
+    margin-bottom: 20px;  /* Adjust the space as needed */
+}
+
+
