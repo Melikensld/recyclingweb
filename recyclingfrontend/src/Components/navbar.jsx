@@ -1,17 +1,17 @@
-// src/components/navbar.jsx
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from './Contexts/authContext'; // import the AuthContext
+import { useAuth } from './Contexts/authContext';
 import "./navbar.css";
 import logo from './image/logo2.png';
 import {FiLogOut} from "react-icons/fi";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
-  const { isAuthenticated, logout } = useAuth(); // get authentication status and logout function
+  const { isAuthenticated, logout } = useAuth();
 
   const navToggle = () => {
-    setIsActive(!isActive); // Toggle the active state
+    setIsActive(!isActive);
   };
 
   return (

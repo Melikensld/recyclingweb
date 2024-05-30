@@ -24,16 +24,16 @@ function AboutPage() {
         <div className="team-section">
           <div className="team-member">
             <h3><FaDatabase style={{ marginRight: '10px' }}/>Gülsün Görgülü</h3>
-            <p>Gülsün, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında chatbot yapımı ve projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.
+            <p>Gülsün, as a computer engineering student, has participated in building the chatbot and coding the web component of our project, involving both the backend and frontend.
             </p>
           </div>
           <div className="team-member">
             <h3><FaLaptopCode style={{ marginRight: '10px' }}/>Kürşat Varlı</h3>
-            <p>Kürşat, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında ve machine learning algoritmasının geliştirilmesinde projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.</p>
+            <p>Kürşat, as a computer engineering student, has been involved in the technological aspect of our project, including the development of the machine learning algorithm and coding the web component of our project, covering both the backend and frontend.</p>
           </div>
           <div className="team-member">
             <h3><FaCode style={{ marginRight: '10px' }}/>Melike Ünsaldı</h3>
-            <p>Melike,bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında web kısmının kodlanmasında yer almıştır. Frontend, backend ve login kısmının yapımında yer almıştır.</p>
+            <p>Melike, as a computer engineering student, has been involved in the technological side of our project, specifically in coding the web component. She has worked on the frontend, backend, and the construction of the login section.</p>
           </div>
         </div>
       </section>

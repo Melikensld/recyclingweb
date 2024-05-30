@@ -10,7 +10,7 @@ public class RecyclingMaterial {
     private Long id;
 
     @Column(name = "material_type")
-    private String materialType;  // Values: 'paper', 'metal', 'glass', 'plastic'
+    private String materialType;
 
     public Long getId() {
         return id;
@@ -45,11 +45,11 @@ public class RecyclingMaterial {
     }
 
     @Column(name = "quantity")
-    private Double quantity;  // Örneğin kilogram cinsinden miktar
+    private Double quantity;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;  // Bu materyal kimin
+    private User user;
 
-    // Constructors, getters and setters
+
 }

@@ -1,9 +1,9 @@
-/* Homepage.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 .homepage-wrapper {
     background: rgb(121,161,34);
     background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
-    min-height: 100vh; /* Sayfanın tam boyunu kaplar */
+    min-height: 100vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 
 .homepage-content {
     text-align: center;
-    flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
+    flex: 1;
 }
 
 .info-boxes {
@@ -23,67 +23,65 @@
 }
 
 .info-box {
-    flex: 1 1 200px; /* Box genişliğini artır */
-    height: 250px; /* Box yüksekliğini belirle */
+    flex: 1 1 200px;
+    height: 250px;
     margin: 20px;
-    padding: 10px; /* İç boşluk */
-    border-radius: 15px; /* Yuvarlak köşeler */
-    overflow: hidden; /* İçerik taşarsa gizle */
-    position: relative; /* Pozisyon ayarı */
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #4CAF50; /* Belirgin kenarlık */
-    background-color: #f0f0f0; /* Daha açık bir arka plan */
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Başlangıçta hafif gölge */
+    border: 2px solid #4CAF50;
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
 }
 
 .info-box:hover {
-    transform: translateY(-5px) scale(1.05) rotate(2deg); /* Yükselme, büyüme ve hafif rotasyon */
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Gölgeyi artır */
+    transform: translateY(-5px) scale(1.05) rotate(2deg);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
 }
 
 .info-box-image {
     position: relative;
-    width: 100%; /* Tam genişlik */
-    height: 100%; /* Kutu yüksekliğini doldur */
-    background-color: #f9f9f9; /* Arka plan rengi */
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
 }
 
 .info-box img {
-    width: 90%; /* Resim genişliği */
-    height: 80%; /* Resim yüksekliği */
-    object-fit: cover; /* Resmi kutuya tam sığdır */
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
 
 }
 
 .info-box-text {
     position: absolute;
-    bottom: 5%; /* Metni resmin üst kısmına yerleştir */
+    bottom: 5%;
     left: 50%;
-    transform: translateX(-50%); /* Yatay ortalamayı doğru ayarla */
-    color: #333; /* Metin rengi */
-    text-align: center; /* Metni ortala */
-    width: 100%; /* Metin genişliği */
-    padding: 5px; /* Metin çevresinde boşluk */
+    transform: translateX(-50%);
+    color: #333;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
 }
 
 .info-box h2 {
-    font-size: 24px; /* Metin boyutu büyütüldü */
-    margin: 0; /* Marjı sıfırla */
+    font-size: 24px;
+    margin: 0;
 }
 
 
-
-/* Slider genel stil ayarları */
 .slider-item {
     position: relative;
-    color: white; /* Metin rengini belirleyin, beyaz genellikle görünürlük için iyidir */
+    color: white;
 }
 
 .slider-image {
     width: 100%;
-    height: 380px; /* Sabit bir yükseklik veya ihtiyacınıza uygun olarak ayarlayın */
-    object-fit: cover; /* Resmin boyutlandırılma şeklini ayarlar */
+    height: 380px;
+    object-fit: cover;
 }
 
 
@@ -100,7 +98,7 @@
     border: 1px solid #ccc;
     z-index: 1000;
 }
-/* Modal Overlay */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -114,7 +112,7 @@
     z-index: 1050;
 }
 
-/* Modal Content */
+
 .modal-content {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -128,7 +126,7 @@
 
 }
 
-/* Modal Header */
+
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -142,7 +140,7 @@
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Close Button */
+
 .close-button {
     font-size: 24px;
     border: none;
@@ -155,13 +153,13 @@
     color: #000;
 }
 
-/* Modal Body */
+
 .modal-body {
     overflow-y: auto;
     max-height: 60vh;
 }
 
-/* Styling for Paragraphs in Modal */
+
 .modal-body p {
     margin-bottom: 12px;
     line-height: 1.6;
@@ -172,10 +170,10 @@
 .modal-body p.bold {
     font-weight: bold;
     color: white;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);/* Metin rengini daha belirgin yapmak için */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Unordered List in Modal */
+
 .modal-body ul {
     padding-left: 20px;
 }
@@ -187,7 +185,6 @@
     font-size: 16px;
 }
 
-/* Make the bullets slightly bold */
 .modal-body ul li {
     font-weight: 500;
     list-style-type: none;
@@ -212,21 +209,20 @@
 }
 
 .homepage-slider {
-    width: 100vw; /* Tüm ekran genişliğini kaplar */
-    height: 100vh; /* Tüm ekran yüksekliğini kaplar */
+    width: 100vw;
+    height: 100vh;
 
     .slick-slide {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Her slayt tam ekran yüksekliğinde olacak */
+        height: 100vh;
         color: white;
         background-size: cover;
 
     }
 }
 
-/* Metinleri merkezlemek için */
 .slick-slide h1 {
     text-align: center;
     padding: 0 20px;

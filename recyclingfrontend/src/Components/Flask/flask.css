@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 body {
-    font-family: 'Lexend', sans-serif; /* Updated to match Profile page font */
+    font-family: 'Lexend', sans-serif;
     margin: 0;
     padding: 0;
     background: rgb(121,161,34);
@@ -19,14 +19,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Adjusted to move content higher */
+    justify-content: flex-start;
     padding: 20px;
     text-align: center;
     color: white;
 }
 
 .header {
-    margin-top: 20px; /* Adjust this value to move the header higher or lower */
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -56,19 +56,19 @@ body {
     max-width: 350px;
     padding: 20px;
     border: none;
-    border-radius: 15px; /* Updated border-radius */
+    border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .flask-form label {
     display: flex;
-    flex-direction: row; /* Changed to row to align items horizontally */
-    align-items: center; /* Align items vertically in the center */
-    gap: 10px; /* Space between checkbox and label text */
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     font-weight: normal;
-    color: white; /* Updated font color */
+    color: white;
 }
 
 .flask-form input[type="number"] {
@@ -80,8 +80,8 @@ body {
 }
 
 .flask-form input[type="checkbox"] {
-    margin: 0; /* Remove default margin */
-    width: auto; /* Set width to auto to fit content */
+    margin: 0;
+    width: auto;
 }
 
 .submit-button {
@@ -107,9 +107,9 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    border-radius: 15px; /* Updated border-radius */
+    border-radius: 15px;
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 300px;
     min-height: 150px;
     transition: opacity 1s ease-in-out;
@@ -119,7 +119,7 @@ body {
 .tree-icon {
     font-size: 4rem;
     color: #008000;
-    animation: pulse 2s infinite; /* Pulse animation */
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -135,23 +135,23 @@ body {
 }
 
 .prediction-text {
-    font-size: 24px; /* Increased font size */
+    font-size: 24px;
     font-weight: bold;
-    color: white; /* Updated font color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for effect */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
 
 .saved-trees-label {
-    font-size: 20px; /* Label font size */
+    font-size: 20px;
     color: white;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .prediction-container.show {
     opacity: 1;
-    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {

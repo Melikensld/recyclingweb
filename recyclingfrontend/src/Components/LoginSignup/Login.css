@@ -26,7 +26,7 @@
     background: transparent;
     border: none;
     color: rgb(4, 39, 106);
-    font-size: 1.5em; /* Ikon boyutunu ayarlar */
+    font-size: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,16 +97,16 @@
 .switch-button{
     background: none;
     border: none;
-    color: rgb(4, 39, 106); /* Buton rengini ayarlar */
+    color: rgb(4, 39, 106);
     cursor: pointer;
     text-decoration: underline;
     padding: 5px;
     font-size: 14px;
-    margin-left: 5px; /* Metin aralığını ayarlar */
+    margin-left: 5px;
 }
 .switch-button:hover {
-    color: #0056b3; /* Fare üzerine gelindiğinde renk değişimi */
-    text-decoration: none; /* Üzerine gelindiğinde çizgiyi kaldırır */
+    color: #0056b3;
+    text-decoration: none;
 }
 
 .forgot-password span{

@@ -70,15 +70,15 @@ transition: all 2s ease-in-out;
 }
 .auth-links {
   display: flex;
-  align-items: center; /* İçerikleri dikey olarak ortalar */
+  align-items: center;
 }
 .logout-icon {
-  color: #dc3545; /* İkon rengi */
-  font-size: 1.5em; /* İkon boyutu */
-  margin-right: 5px; /* Eğer metin de eklerseniz sağ tarafında boşluk oluşturur */
+  color: #dc3545;
+  font-size: 1.5em;
+  margin-right: 5px;
 }
 .logout-button:hover .logout-icon{
-  background-color: #f8f8f8; /* Fare üzerine gelindiğinde arka plan */
+  background-color: #f8f8f8;
   color: #0056b3;
 }
 

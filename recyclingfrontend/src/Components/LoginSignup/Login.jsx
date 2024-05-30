@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Contexts/authContext'; // import the AuthContext
+import { useAuth } from '../Contexts/authContext';
 import './Login.css';
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
@@ -15,7 +15,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
-    const { login } = useAuth(); // get the login function
+    const { login } = useAuth();
 
    const handleLogin = () => {
        const loginUser = {
@@ -26,12 +26,12 @@ const Login = () => {
        fetch("/api/user/login?email=" + loginUser.email + "&password=" + loginUser.password, {
            method: "POST"
        })
-           .then(response => response.json()) // JSON olarak yanıtı işle
+           .then(response => response.json())
            .then(data => {
                if (data.userId) {
-                   login(); // update authentication status
-                   localStorage.setItem("userId", data.userId); // Kullanıcı ID'sini sakla
-                   navigate('/profile'); // navigate to profile page
+                   login();
+                   localStorage.setItem("userId", data.userId);
+                   navigate('/profile');
                } else {
                    alert("Geçersiz kimlik bilgileri");
                }
@@ -57,13 +57,13 @@ const Login = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    alert("Kullanıcı başarıyla kaydedildi."); // Kayıt başarılı uyarısı
+                    alert("Kullanıcı başarıyla kaydedildi.");
                 } else {
-                    alert("Kullanıcı kaydı sırasında bir hata oluştu."); // Kayıt hatası uyarısı
+                    alert("Kullanıcı kaydı sırasında bir hata oluştu.");
                 }
             })
             .catch(error => {
-                alert("Sunucu hatası: " + error.message); // Sunucu ile ilgili hata uyarısı
+                alert("Sunucu hatası: " + error.message);
             });
     };
 

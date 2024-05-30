@@ -3,22 +3,32 @@
   flex-direction: column;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  background: rgb(121,161,34);
+  background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
+  overflow-y: auto;
 }
 
 .contact-content {
   flex: 1;
   padding: 40px 20px;
   text-align: center;
-  background-color: #f4f4f4; /* Arka plan rengi */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 
 .contact-heading {
-  color: #2c3e50; /* Başlık rengi */
+  color: #f3f0f0;
   margin-bottom: 20px;
 }
 
 .contact-detail {
   margin-bottom: 10px;
+  color: #f3f0f0;
 }
 
 .contact-form {
@@ -47,4 +57,12 @@
 
 .contact-submit:hover {
   background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

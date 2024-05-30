@@ -22,7 +22,7 @@ function ContactPage() {
     e.preventDefault();
     console.log('Form Data:', formData);
     alert('Mesajınız alınmıştır, teşekkür ederiz!');
-    setFormData({ name: '', email: '', message: '' }); // Formu temizle
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (

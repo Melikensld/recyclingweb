@@ -28,7 +28,7 @@ const Flask = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsSubmitting(true);
-        const apiUrl = 'http://localhost:5001/predict'; // Flask API'nin çalıştığı port ve endpoint
+        const apiUrl = 'http://localhost:5001/predict';
         try {
             const response = await axios.post(apiUrl, inputData);
             setPrediction(response.data.prediction);

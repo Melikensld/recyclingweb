@@ -7,7 +7,7 @@ import { GiSodaCan, GiPlasticDuck } from 'react-icons/gi';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-// Register components
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Profile() {
@@ -126,9 +126,9 @@ function Profile() {
                     userInfo.materials.plastic
                 ],
                 backgroundColor: [
-                    'rgba(0, 128, 0, 0.6)', // Green for Paper
-                    'rgba(178, 34, 34, 0.6)', // Firebrick Red for Metal
-                    'rgba(30, 144, 255, 0.6)', // Dodger Blue for Glass
+                    'rgba(0, 128, 0, 0.6)',
+                    'rgba(178, 34, 34, 0.6)',
+                    'rgba(30, 144, 255, 0.6)',
                     'rgba(253, 216, 53, 0.6)'
                 ],
                 borderColor: [

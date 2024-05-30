@@ -1,4 +1,4 @@
-/* InfoPage.css */
+
 .info-container {
     background: rgb(121,161,34);
     background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
@@ -27,7 +27,7 @@
 
 .info-heading {
     font-size: 2.5rem;
-    color: white; /* Daha koyu yeşil renk */
+    color: white;
     margin-bottom: 15px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
 
 .section-subheading {
     font-size: 2.6rem;
-    color: #01410b; /* Daha koyu yeşil renk */
+    color: #01410b;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -44,14 +44,14 @@ p {
     line-height: 1.6;
     font-size: 16px;
     margin-bottom: 20px;
-    color: #f3f0f0; /* Daha koyu yazı rengi */
+    color: #f3f0f0;
 }
 
 .info-image {
     max-width: 70%;
     height: auto;
     margin: 20px 0;
-    border: 2px solid #2E7D32; /* Resimlerin etrafında koyu yeşil kenarlık */
+    border: 2px solid #2E7D32;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
@@ -60,7 +60,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px; /* Resim ve metin arasındaki boşluk */
+    gap: 20px;
 }
 
 .text-container {
@@ -71,7 +71,7 @@ p {
 .image-container {
     flex: 1;
     min-width: 300px;
-    text-align: center; /* Resimleri ortalar */
+    text-align: center;
 }
 
 .video-container {
@@ -79,7 +79,6 @@ p {
     text-align: center;
     border-radius: 8px;
     padding: 10px;
-    /*background-color: #8A9A5B;  Beyaz arka plan */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -97,7 +96,6 @@ iframe {
     bottom: 0;
 }
 
-/* Animasyonlar */
 @keyframes fadeInUp {
     to {
         opacity: 1;
