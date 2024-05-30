@@ -104,14 +104,15 @@ const Flask = () => {
                         </button>
                     </form>
                     <div className={`prediction-container ${prediction ? 'show' : ''}`}>
-                        {isSubmitting && <FaTree className="tree-icon" />}
-                        {prediction && (
-                            <>
-                                <FaTree className="tree-icon-result" />
-                                <p className="prediction-text">{prediction}</p>
-                            </>
-                        )}
-                    </div>
+                                    <FaTree className="tree-icon-top" />
+                                    <p className="saved-trees-label">Kurtardığınız Ağaç Sayısı:</p>
+                                    {prediction && (
+                                        <div className="result-box">
+
+                                            <p className="prediction-text">{prediction}</p>
+                                        </div>
+                                    )}
+                     </div>
                 </div>
             </div>
             <Footer />

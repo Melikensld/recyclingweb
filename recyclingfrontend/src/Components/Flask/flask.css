@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern bir font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f9f9fb; /* Daha yumuşak bir arka plan rengi */
 }
 
 .flask-page {
@@ -27,7 +27,6 @@ body {
     gap: 50px;
     width: 100%;
     max-width: 800px;
-    transition: transform 1s ease-in-out;
 }
 
 .flask-form {
@@ -37,18 +36,17 @@ body {
     width: 100%;
     max-width: 350px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: none; /* Kenar çizgileri kaldırıldı */
     border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Daha hafif gölge */
 }
 
 .flask-form label {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-weight: bold;
+    font-weight: normal; /* Font kalınlığı azaltıldı */
     color: #333;
 }
 
@@ -56,7 +54,7 @@ body {
 .flask-form input[type="checkbox"] {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 2px solid #ddd; /* Border rengi yumuşatıldı */
     border-radius: 5px;
     width: 100%;
 }
@@ -66,7 +64,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #28a745;
+    background-color: #4CAF50; /* Yeşil tonu değiştirildi */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -74,49 +72,61 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #218838;
+    background-color: #45a049;
 }
 
 .prediction-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 20px;
     border-radius: 10px;
     background-color: #e9f5e9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 0; /* Başlangıçta görünmez */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     min-width: 300px;
-    min-height: 80px;
-    position: relative;
+    min-height: 150px;
+    transition: opacity 1s ease-in-out;
+    opacity: 1; /* Görünür yap */
 }
 
 .tree-icon {
-    color: #28a745;
     font-size: 4rem;
-    animation: spin 1s infinite;
+    color: #4CAF50;
+}
+
+.spinning {
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.tree-icon-result {
-    color: #28a745;
-    font-size: 4rem;
-    margin-right: 10px;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    opacity: 1; /* Başlangıçta görünür */
+.tree-circle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Daire boyutu */
+    height: 50px; /* Daire boyutu */
+    background-color: #4CAF50; /* Daha koyu bir yeşil */
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .prediction-text {
-    font-size: 24px;
+    margin-top: 60px; /* İkon ve dairenin altından boşluk */
+    font-size: 18px;
     font-weight: bold;
     color: #333;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    opacity: 0; /* Başlangıçta görünmez */
+    z-index: 2;
 }
 
 .prediction-container.show {
