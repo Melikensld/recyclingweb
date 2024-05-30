@@ -1,4 +1,5 @@
 /* Homepage.css */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 .homepage-wrapper {
     background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
     min-height: 100vh; /* Sayfanın tam boyunu kaplar */
@@ -9,7 +10,6 @@
 
 .homepage-content {
     text-align: center;
-    padding: 20px;
     flex: 1; /* Tüm kullanılabilir alanı kaplar, footer hariç */
 }
 
@@ -22,23 +22,56 @@
 }
 
 .info-box {
-    flex: 1 1 200px;
-    margin: 10px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    flex: 1 1 200px; /* Box genişliğini artır */
+    height: 250px; /* Box yüksekliğini belirle */
+    margin: 20px;
+    padding: 10px; /* İç boşluk */
+    border-radius: 15px; /* Yuvarlak köşeler */
+    overflow: hidden; /* İçerik taşarsa gizle */
+    position: relative; /* Pozisyon ayarı */
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #4CAF50; /* Belirgin kenarlık */
+    background-color: #f0f0f0; /* Daha açık bir arka plan */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Başlangıçta hafif gölge */
 }
-.info-box h2 {
-    color: #1B5E20;
-}
+
 .info-box:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05) rotate(2deg); /* Yükselme, büyüme ve hafif rotasyon */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* Gölgeyi artır */
 }
+
+.info-box-image {
+    position: relative;
+    width: 100%; /* Tam genişlik */
+    height: 100%; /* Kutu yüksekliğini doldur */
+    background-color: #f9f9f9; /* Arka plan rengi */
+}
+
+.info-box img {
+    width: 90%; /* Resim genişliği */
+    height: 80%; /* Resim yüksekliği */
+    object-fit: cover; /* Resmi kutuya tam sığdır */
+
+}
+
+.info-box-text {
+    position: absolute;
+    bottom: 5%; /* Metni resmin üst kısmına yerleştir */
+    left: 50%;
+    transform: translateX(-50%); /* Yatay ortalamayı doğru ayarla */
+    color: #333; /* Metin rengi */
+    text-align: center; /* Metni ortala */
+    width: 100%; /* Metin genişliği */
+    padding: 5px; /* Metin çevresinde boşluk */
+}
+
+.info-box h2 {
+    font-size: 24px; /* Metin boyutu büyütüldü */
+    margin: 0; /* Marjı sıfırla */
+}
+
+
 
 /* Slider genel stil ayarları */
 .slider-item {
@@ -48,16 +81,12 @@
 
 .slider-image {
     width: 100%;
-    height: 360px; /* Sabit bir yükseklik veya ihtiyacınıza uygun olarak ayarlayın */
+    height: 380px; /* Sabit bir yükseklik veya ihtiyacınıza uygun olarak ayarlayın */
     object-fit: cover; /* Resmin boyutlandırılma şeklini ayarlar */
 }
 
 
-.info-box img {
-    max-width: 250px; /* Ensures the image never exceeds the box width */
-    height: auto; /* Maintains the aspect ratio */
-    margin-bottom: 10px; /* Adds some space between the image and the text below it */
-}
+
 
 
 .modal {
@@ -198,11 +227,27 @@
     padding: 0 20px;
     color: #1B5E20;
     margin: 1%;
+    font-family: 'Lexend', sans-serif;
 }
 
 .slick-slide p {
     text-align: center;
     padding: 0 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Lexend', sans-serif;
 
 }
+.map iframe {
+    margin-bottom: 5%;
+    display: block; /* Haritanın düzgün görünmesini sağlar */
+    margin-left: auto; /* Haritayı merkeze alır */
+    margin-right: auto; /* Haritayı merkeze alır */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Gölge efekti ekler */
+}
+.map{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+

@@ -72,21 +72,48 @@ function Homepage() {
                 <div className="info-boxes">
                     {/* İnfo boxlar için tıklanabilir alanlar */}
                     <div className="info-box" onClick={() => handleOpenModal("Paper")}>
-                        <h2>Paper</h2>
-                        <img src={paperIcon} alt="Paper Recycling Icon"/>
+                        <div className="info-box-image">
+                            <img src={paperIcon} alt="Paper Recycling Icon"/>
+                            <div className="info-box-text">
+                                <h2>Paper</h2>
+                            </div>
+                        </div>
                     </div>
                     <div className="info-box" onClick={() => handleOpenModal("Plastic")}>
-                        <h2>Plastic</h2>
-                        <img src={plasticIcon} alt="Plastic Recycling Icon"/>
+                        <div className="info-box-image">
+                            <img src={plasticIcon} alt="Plastic Recycling Icon"/>
+                            <div className="info-box-text">
+                                <h2>Plastic</h2>
+                            </div>
+                        </div>
                     </div>
                     <div className="info-box" onClick={() => handleOpenModal("Glass")}>
-                        <h2>Glass</h2>
-                        <img src={glassIcon} alt="Glass Recycling Icon"/>
+                        <div className="info-box-image">
+                            <img src={glassIcon} alt="Glass Recycling Icon"/>
+                            <div className="info-box-text">
+                                <h2>Glass</h2>
+                            </div>
+                        </div>
                     </div>
                     <div className="info-box" onClick={() => handleOpenModal("Metal")}>
-                        <h2>Metal</h2>
-                        <img src={metalIcon} alt="Metal Recycling Icon"/>
+                        <div className="info-box-image">
+                            <img src={metalIcon} alt="Metal Recycling Icon"/>
+                            <div className="info-box-text">
+                                <h2>Metal</h2>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div className="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29164.09711923819!2d30.510976714414994!3d39.795817756675525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cc3ff98c92eb0d%3A0x978ed8d0acc66684!2sTepeba%C5%9F%C4%B1%20Belediyesi%20At%C4%B1k%20Getirme%20Merkezi!5e0!3m2!1str!2str!4v1717065285120!5m2!1str!2str"
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
 
                 {modalContent && (
