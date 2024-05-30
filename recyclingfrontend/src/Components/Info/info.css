@@ -1,11 +1,13 @@
 /* InfoPage.css */
 .info-container {
-    background-color: #D3D3D3; /* Arka plan rengini belirler */
+    background: rgb(121,161,34);
+    background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
     min-height: 100vh; /* Sayfanın tam boyunu kaplar */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Lexend', sans-serif;
 }
 
 .info-section {
@@ -14,23 +16,26 @@
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9; /* Açık arka plan */
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
 }
 
-.section-heading {
-    font-size: 2.8rem;
-    color: #2E7D32; /* Daha koyu yeşil renk */
+.info-heading {
+    font-size: 2.5rem;
+    color: white; /* Daha koyu yeşil renk */
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .section-subheading {
     font-size: 2.6rem;
-    color: #1B5E20; /* Daha koyu yeşil renk */
+    color: #01410b; /* Daha koyu yeşil renk */
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -39,7 +44,7 @@ p {
     line-height: 1.6;
     font-size: 16px;
     margin-bottom: 20px;
-    color: #333; /* Daha koyu yazı rengi */
+    color: #f3f0f0; /* Daha koyu yazı rengi */
 }
 
 .info-image {

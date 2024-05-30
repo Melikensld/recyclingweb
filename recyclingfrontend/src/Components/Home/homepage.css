@@ -1,7 +1,8 @@
 /* Homepage.css */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 .homepage-wrapper {
-    background-color: #D3D3D3; /* Yalnızca Homepage komponentinin arka planını beyaz yapar */
+    background: rgb(121,161,34);
+    background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
     min-height: 100vh; /* Sayfanın tam boyunu kaplar */
     overflow-y: auto;
     display: flex;
@@ -115,7 +116,6 @@
 
 /* Modal Content */
 .modal-content {
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -123,6 +123,9 @@
     padding: 20px;
     box-sizing: border-box;
     position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+
 }
 
 /* Modal Header */
@@ -135,7 +138,8 @@
     margin-bottom: 20px;
 }
 .modal-header h2 {
-    color: #1B5E20;
+    color: #ffffff;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Close Button */
@@ -161,13 +165,14 @@
 .modal-body p {
     margin-bottom: 12px;
     line-height: 1.6;
-    color: #666;
+    color: white;
     font-size: 16px;
 }
 
 .modal-body p.bold {
     font-weight: bold;
-    color: #1B5E20; /* Metin rengini daha belirgin yapmak için */
+    color: white;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);/* Metin rengini daha belirgin yapmak için */
 }
 
 /* Unordered List in Modal */
@@ -178,7 +183,7 @@
 .modal-body ul li {
     margin-bottom: 8px;
     list-style-type: disc;
-    color: #333;
+    color: white;
     font-size: 16px;
 }
 
@@ -217,7 +222,7 @@
         height: 100vh; /* Her slayt tam ekran yüksekliğinde olacak */
         color: white;
         background-size: cover;
-        background-position: center;
+
     }
 }
 
@@ -225,7 +230,8 @@
 .slick-slide h1 {
     text-align: center;
     padding: 0 20px;
-    color: #1B5E20;
+    color: #abd1b1;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     margin: 1%;
     font-family: 'Lexend', sans-serif;
 }
@@ -234,6 +240,7 @@
     text-align: center;
     padding: 0 20px;
     font-family: 'Lexend', sans-serif;
+    color: white;
 
 }
 .map iframe {

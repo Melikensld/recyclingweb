@@ -10,7 +10,7 @@ function InfoPage() {
         <div className="info-container">
             <Navbar />
             <section className="info-section">
-                <h1 className="section-heading">What is recycling? Save Our Planet and Environment!</h1>
+                <h1 className="info-heading">What is recycling? Save Our Planet and Environment!</h1>
                 <div className="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/IsAg-JqJnA8?si=6ogexruqWBRpH6Gh"
                             title="YouTube video player" frameBorder="0"
