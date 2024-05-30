@@ -43,6 +43,9 @@ const Flask = () => {
         <div className="flask-page">
             <Navbar />
             <div className="flask-content">
+                <div className="header">
+                    <h1>Calculate how many trees you save by recycling paper!</h1>
+                </div>
                 <div className="form-and-prediction">
                     <form onSubmit={handleSubmit} className={`flask-form ${prediction ? 'move-left' : ''}`}>
                         <label>
@@ -55,64 +58,61 @@ const Flask = () => {
                             />
                         </label>
                         <label>
-                            Woody:
                             <input
                                 type="checkbox"
                                 name="woody"
                                 checked={inputData.woody}
                                 onChange={handleChange}
                             />
+                            Woody
                         </label>
                         <label>
-                            Newspaper:
                             <input
                                 type="checkbox"
                                 name="newspaper"
                                 checked={inputData.newspaper}
                                 onChange={handleChange}
                             />
+                            Newspaper
                         </label>
                         <label>
-                            Mixed:
                             <input
                                 type="checkbox"
                                 name="mixed"
                                 checked={inputData.mixed}
                                 onChange={handleChange}
                             />
+                            Mixed
                         </label>
                         <label>
-                            Inked:
                             <input
                                 type="checkbox"
                                 name="inked"
                                 checked={inputData.inked}
                                 onChange={handleChange}
                             />
+                            Inked
                         </label>
                         <label>
-                            Cardboard:
                             <input
                                 type="checkbox"
                                 name="cardboard"
                                 checked={inputData.cardboard}
                                 onChange={handleChange}
                             />
+                            Cardboard
                         </label>
                         <button type="submit" className="submit-button">
-                            Predict
+                            {isSubmitting ? <div className="loading-spinner"></div> : 'Predict'}
                         </button>
                     </form>
                     <div className={`prediction-container ${prediction ? 'show' : ''}`}>
-                                    <FaTree className="tree-icon-top" />
-                                    <p className="saved-trees-label">Kurtardığınız Ağaç Sayısı:</p>
-                                    {prediction && (
-                                        <div className="result-box">
-
-                                            <p className="prediction-text">{prediction}</p>
-                                        </div>
-                                    )}
-                     </div>
+                        <FaTree className="tree-icon" />
+                        <p className="saved-trees-label">The Number of Saved Trees:</p>
+                        {prediction && (
+                            <p className="prediction-text">{prediction}</p>
+                        )}
+                    </div>
                 </div>
             </div>
             <Footer />

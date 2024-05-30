@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar';
 import Footer from '../Footer/footer';
+import { FaLaptopCode, FaDatabase, FaCode } from 'react-icons/fa';
 import './about.css';
 
 function AboutPage() {
@@ -8,7 +9,7 @@ function AboutPage() {
     <div className="about-container">
       <Navbar />
       <section className="about-section">
-        <h1 className="section-heading">About Us</h1>
+        <h1 className="about-heading">About Us</h1>
         <p>Our project is designed to enhance sustainable environmental awareness and make recycling processes more comprehensible. Launched in 2023, this initiative aims to create awareness in society through intensive studies on various recycling materials.
 
           The Environmental Awareness and Effective Recycling Platform Project takes on a leading role in the industry by continuously focusing on improvement. This leadership reinforces our commitment to integrating environmental management and sustainable practices at all stages of our project.
@@ -22,16 +23,16 @@ function AboutPage() {
         <h2>Our Team</h2>
         <div className="team-section">
           <div className="team-member">
-            <h3>Gülsün Görgülü</h3>
+            <h3><FaDatabase style={{ marginRight: '10px' }}/>Gülsün Görgülü</h3>
             <p>Gülsün, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında chatbot yapımı ve projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.
             </p>
           </div>
           <div className="team-member">
-            <h3>Kürşat Varlı</h3>
+            <h3><FaLaptopCode style={{ marginRight: '10px' }}/>Kürşat Varlı</h3>
             <p>Kürşat, bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında ve machine learning algoritmasının geliştirilmesinde projemizin web kısmının kodlanmasında yer almıştır. Web projemizin backend ve frontend kısmında yer almıştır.</p>
           </div>
           <div className="team-member">
-            <h3>Melike Ünsaldı</h3>
+            <h3><FaCode style={{ marginRight: '10px' }}/>Melike Ünsaldı</h3>
             <p>Melike,bilgisayar mühendisliği öğrencisi olarak projemizin teknoloji tarafında web kısmının kodlanmasında yer almıştır. Frontend, backend ve login kısmının yapımında yer almıştır.</p>
           </div>
         </div>

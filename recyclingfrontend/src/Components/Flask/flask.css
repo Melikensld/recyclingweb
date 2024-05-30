@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 body {
-    font-family: 'Roboto', sans-serif; /* Modern bir font */
+    font-family: 'Lexend', sans-serif; /* Updated to match Profile page font */
     margin: 0;
     padding: 0;
-    background-color: #f9f9fb; /* Daha yumuşak bir arka plan rengi */
+    background: rgb(121,161,34);
+    background: linear-gradient(0deg, rgba(121,161,34,1) 0%, rgba(0,33,65,1) 95%);
 }
 
 .flask-page {
@@ -16,8 +19,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Adjusted to move content higher */
     padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.header {
+    margin-top: 20px; /* Adjust this value to move the header higher or lower */
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
 }
 
 .form-and-prediction {
@@ -36,27 +55,33 @@ body {
     width: 100%;
     max-width: 350px;
     padding: 20px;
-    border: none; /* Kenar çizgileri kaldırıldı */
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Daha hafif gölge */
+    border: none;
+    border-radius: 15px; /* Updated border-radius */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
 }
 
 .flask-form label {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-weight: normal; /* Font kalınlığı azaltıldı */
-    color: #333;
+    flex-direction: row; /* Changed to row to align items horizontally */
+    align-items: center; /* Align items vertically in the center */
+    gap: 10px; /* Space between checkbox and label text */
+    font-weight: normal;
+    color: white; /* Updated font color */
 }
 
-.flask-form input[type="number"],
-.flask-form input[type="checkbox"] {
+.flask-form input[type="number"] {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #ddd; /* Border rengi yumuşatıldı */
+    border: 2px solid #ddd;
     border-radius: 5px;
     width: 100%;
+}
+
+.flask-form input[type="checkbox"] {
+    margin: 0; /* Remove default margin */
+    width: auto; /* Set width to auto to fit content */
 }
 
 .submit-button {
@@ -64,81 +89,90 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #4CAF50; /* Yeşil tonu değiştirildi */
+    background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s;
 }
 
 .submit-button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 .prediction-container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #e9f5e9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 15px; /* Updated border-radius */
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
     min-width: 300px;
     min-height: 150px;
     transition: opacity 1s ease-in-out;
-    opacity: 1; /* Görünür yap */
+    opacity: 1;
 }
 
 .tree-icon {
     font-size: 4rem;
-    color: #4CAF50;
+    color: #008000;
+    animation: pulse 2s infinite; /* Pulse animation */
 }
 
-.spinning {
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+@keyframes pulse {
+    0% {
+        transform: scale(1);
     }
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: scale(1.1);
     }
-}
-
-.tree-circle {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px; /* Daire boyutu */
-    height: 50px; /* Daire boyutu */
-    background-color: #4CAF50; /* Daha koyu bir yeşil */
-    border-radius: 50%;
-    z-index: 0;
+    100% {
+        transform: scale(1);
+    }
 }
 
 .prediction-text {
-    margin-top: 60px; /* İkon ve dairenin altından boşluk */
-    font-size: 18px;
+    font-size: 24px; /* Increased font size */
     font-weight: bold;
-    color: #333;
-    z-index: 2;
+    color: white; /* Updated font color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for effect */
+    margin-top: 20px;
+}
+
+.saved-trees-label {
+    font-size: 20px; /* Label font size */
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for effect */
 }
 
 .prediction-container.show {
     opacity: 1;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
 }
 
-.prediction-container.show .tree-icon-result {
-    transform: translateX(-50px);
-    opacity: 1;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.prediction-container.show .prediction-text {
-    opacity: 1;
-    transform: translateX(10px);
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
