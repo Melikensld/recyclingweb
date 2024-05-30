@@ -101,7 +101,7 @@
     color: white; /* White text for better visibility on gradient background */
 }
 
-/* User materials styles */
+
 .user-materials {
     flex: 1;
     background: rgba(255, 255, 255, 0.4);

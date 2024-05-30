@@ -129,7 +129,7 @@ function Profile() {
                     'rgba(0, 128, 0, 0.6)', // Green for Paper
                     'rgba(178, 34, 34, 0.6)', // Firebrick Red for Metal
                     'rgba(30, 144, 255, 0.6)', // Dodger Blue for Glass
-                    'rgba(253, 216, 53, 0.6)' // Sunflower Yellow for Plastic
+                    'rgba(253, 216, 53, 0.6)'
                 ],
                 borderColor: [
                     'rgba(0, 128, 0, 1)',
